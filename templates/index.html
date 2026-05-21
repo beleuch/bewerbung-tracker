@@ -1,0 +1,107 @@
+<html>
+
+<head>
+
+<style>
+
+body {
+    font-family: Arial;
+    background-color: #f4f4f4;
+    padding: 40px;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 500px;
+    margin: auto;
+}
+
+h1 {
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #0078ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-top: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+li {
+    background: #eee;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Bewerbung Tracker</h1>
+
+<form action="/add" method="post">
+
+    Firmenname:
+    <input type="text" name="firma"><br><br>
+
+    Position:
+    <input type="text" name="stelle"><br><br>
+
+    Status:
+
+    <select name="status">
+
+        <option>Offen</option>
+        <option>Interview</option>
+        <option>Abgelehnt</option>
+        <option>Zusage</option>
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">Hinzufügen</button>
+
+</form>
+
+<h2>Meine Bewerbungen:</h2>
+
+<ul>
+
+{% for id, firma, stelle, status in daten %}
+
+<li>
+
+{{ firma }} - {{ stelle }} ({{ status }})
+
+<form action="/delete/{{ id }}" method="post" style="display:inline;">
+    <button type="submit">Delete</button>
+</form>
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+</body>
+
+</html>
