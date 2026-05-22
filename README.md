@@ -1,60 +1,54 @@
-\# Bewerbung Tracker App
+# Bewerbung Tracker App
 
+A simple web application built with Python and Flask to manage job applications.
 
+---
 
-A simple web application built with Python (Flask) to manage job applications.
+## Features
 
+- Add job applications (company, position, status)
+- View all applications in a list
+- Delete applications
+- Store data using SQLite database
 
+---
 
-\## Features
+## Technologies Used
 
-\- Add job applications (company, position, status)
+- Python
+- Flask
+- SQLite
+- HTML/CSS
+- Git & GitHub
 
-\- View all applications in a list
+---
 
-\- Delete applications
+## Purpose
 
-\- Store data using SQLite database
+This project was built as a learning project to understand:
+- Web development
+- Databases
+- Backend basics
+- CRUD operations
 
+---
 
+## What I Learned
 
-\## Technologies Used
+- Flask routing
+- Working with SQLite databases
+- CRUD functionality
+- HTML templates with Jinja2
+- GitHub basics
 
-\- Python
+---
 
-\- Flask
+## Status
 
-\- SQLite
+First working version completed.
 
-\- HTML/CSS (basic)
-
-
-
-\## Purpose
-
-This project was built as a learning project to understand web development, databases, and backend basics.
-
-
-
-\## What I learned
-
-\- Flask routing
-
-\- Working with databases (SQLite)
-
-\- CRUD operations
-
-\- Basic frontend integration
-
-
-
-\## Status
-
-Project completed as a first working version.
+---
 
 ## Screenshot
 
-
-
-!\[App Screenshot](screenshot.png)
-
+![App Screenshot](screenshot.png)
