@@ -3,7 +3,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-# إنشاء قاعدة البيانات
+
 connection = sqlite3.connect("bewerbungen.db")
 cursor = connection.cursor()
 
@@ -33,6 +33,27 @@ def home():
     connection.close()
 
     return render_template("index.html", daten=daten)
+
+@app.route("/add", methods=["POST"])
+def add():
+
+    firma = request.form["firma"]
+    stelle = request.form["stelle"]
+    status = request.form["status"]
+
+    connection = sqlite3.connect("bewerbungen.db")
+    cursor = connection.cursor()
+
+    cursor.execute(
+        "INSERT INTO bewerbungen (firma, stelle, status) VALUES (?, ?, ?)",
+        (firma, stelle, status)
+    )
+
+    connection.commit()
+    connection.close()
+
+    return redirect("/")
+
 @app.route("/delete/<int:id>", methods=["POST"])
 def delete(id):
 
